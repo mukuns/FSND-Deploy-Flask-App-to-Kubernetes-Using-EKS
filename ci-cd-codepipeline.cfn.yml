@@ -33,6 +33,7 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
+    Default: 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
     Description: GitHub API token - see https://github.com/blog/1509-personal-api-tokens
     MinLength: 3
     MaxLength: 100
@@ -40,7 +41,7 @@ Parameters:
 
   GitHubUser:
     Type: String
-    Default: SudKul
+    Default: mukuns
     Description: GitHub username or organization
     MinLength: 3
     MaxLength: 100
