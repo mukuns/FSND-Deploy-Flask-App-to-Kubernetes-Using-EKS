@@ -1,25 +1,34 @@
-# This is a sample aws-auth-patch.yml file. 
-# Actual aws-auth-patch.yml will be created at /System/Volumes/Data/private/tmp/aws-auth-patch.yml path.
-
 apiVersion: v1
 data:
-  mapRoles: |
-    - groups:
-      - system:masters
-      rolearn: arn:aws:iam::644752792305:role/UdacityFlaskDeployCBKubectlRole
-      username: build      
-    - groups:
-      - system:bootstrappers
-      - system:nodes
-      rolearn: arn:aws:iam::644752792305:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-17C402QC9VF6L
-      username: system:node:{{EC2PrivateDNSName}}
+  mapRoles: "- groups:\n  - system:masters\n  rolearn: arn:aws:iam::470134764101:role/UdacityFlaskDeployCBKubectlRole\n
+    \ username: build \n- groups:\n  - system:bootstrappers\n  - system:nodes\n  rolearn:
+    arn:aws:iam::470134764101:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-GZSIA89L8A0J\n
+    \ username: system:node:{{EC2PrivateDNSName}}\n"
   mapUsers: |
     []
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2021-02-26T07:40:38Z"
+  creationTimestamp: "2021-04-09T10:53:14Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapUsers: {}
+    manager: eksctl
+    operation: Update
+    time: "2021-04-09T10:53:14Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:mapRoles: {}
+    manager: kubectl-patch
+    operation: Update
+    time: "2021-04-09T11:18:42Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "5992"
+  resourceVersion: "5812"
   selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
-  uid: 5bf363cb-504c-4289-93ce-74257aff0de4
+  uid: 2b058b47-f233-4d0b-827f-6dc0f8034ee1
